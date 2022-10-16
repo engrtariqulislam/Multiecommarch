@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder
 
 
 
-DB::table('user')->insert([
+DB::table('users')->insert([
     // Admin
     [
       'name'=>'Admin',
