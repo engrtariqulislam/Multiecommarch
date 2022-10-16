@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\VendorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +24,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+
+Route::get('admin/dashboard',[AdminController::class,'Admindashboard'])->name('admin.dashboard');
+
+Route::get('vendor/dashboard',[VendorController::class,'Vendordashboard'])->name('vendor.dashboard');
