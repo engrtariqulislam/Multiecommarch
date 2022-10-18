@@ -38,5 +38,6 @@ class AdminController extends Controller
         return view('admin.admin_profile_view',compact('adminData'));
 
     } // End Mehtod 
+    
 
 }
