@@ -8,7 +8,7 @@ class AdminController extends Controller
 {
     public function Admindashboard(){
 
-        return view('admin.admin_dashboard');
+        return view('admin.index');
 
     } // End Mehtod
 }

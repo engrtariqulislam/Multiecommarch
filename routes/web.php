@@ -25,10 +25,17 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+
+// Admin Dashbord
+
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('admin/dashboard',[AdminController::class,'Admindashboard'])->name('admin.dashboard');
+    
 });
 
+
+// Vendor Dashbord
 Route::middleware(['auth','role:vendor'])->group(function(){
 Route::get('vendor/dashboard',[VendorController::class,'Vendordashboard'])->name('vendor.dashboard');
+
 });
