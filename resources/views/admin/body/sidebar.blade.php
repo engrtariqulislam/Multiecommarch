@@ -192,7 +192,7 @@
         </li>
        
         <li>
-           
+            <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class="bx bx-support"></i>
                 </div>
                 <div class="menu-title">Support</div>
