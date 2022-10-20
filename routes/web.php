@@ -24,7 +24,7 @@ Route::middleware(['auth'])->group(function() {
 
     Route::get('/dashboard', [UserController::class, 'UserDashboard'])->name('dashboard');
 
-});
+});   // Gorup Milldeware End
 
 
 //Route::get('/dashboard', function () {
