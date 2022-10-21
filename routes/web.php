@@ -87,11 +87,11 @@ Route::middleware(['auth','role:admin'])->group(function() {
    // Category All Route 
     Route::controller(CategoryController::class)->group(function(){
     Route::get('/all/category' , 'AllCategory')->name('all.category');
-    Route::get('/add/brand' , 'AddBrand')->name('add.brand');
-    Route::post('/store/brand' , 'StoreBrand')->name('store.brand');
-    Route::get('/edit/brand/{id}' , 'EditBrand')->name('edit.brand');
-    Route::post('/update/brand' , 'UpdateBrand')->name('update.brand');
-    Route::get('/delete/brand/{id}' , 'DeleteBrand')->name('delete.brand');
+    Route::get('/add/category' , 'Addcategory')->name('add.category');
+    Route::post('/store/category' , 'Storecategory')->name('store.category');
+    Route::get('/edit/category/{id}' , 'Editcategory')->name('edit.category');
+    Route::post('/update/category' , 'Updatecategory')->name('update.category');
+    Route::get('/delete/category/{id}' , 'Deletecategory')->name('delete.category');
 
 });
    
