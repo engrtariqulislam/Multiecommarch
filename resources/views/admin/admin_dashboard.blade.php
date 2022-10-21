@@ -83,7 +83,9 @@
 	<!--app JS-->
 	<script src="{{asset('adminbackend/assets/js/app.js')}}"></script>
        <!-- toastr js -->
-
+	   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	    <!-- validate js -->
+	   <script src="{{ asset('adminbackend/assets/js/validate.min.js') }}"></script>
 	   <!--Datatable-->
 <script src="{{ asset('adminbackend/assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
 <script>
@@ -92,7 +94,7 @@
 		  } );
 	</script>
 <!--Datatable-->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	
 
 	<script>
 		@if(Session::has('message'))
