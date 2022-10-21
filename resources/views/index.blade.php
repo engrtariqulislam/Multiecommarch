@@ -238,7 +238,7 @@
 
 
 
-    <form method="post" action="{{ route('user.profile.store') }}" > 
+    <form method="post" action="{{ route('user.update.password') }}" > 
             @csrf
 
          @if (session('status'))
@@ -291,6 +291,9 @@
                                     </div>
 
 
+                                </div>
+                            </div>
+                        </div>
 
         <script type="text/javascript">
             $(document).ready(function(){
@@ -305,9 +308,6 @@
         </script>
 
 
-                            </div>
-                        </div>
-                    </div>
 
 
 
