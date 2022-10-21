@@ -99,8 +99,8 @@ Route::middleware(['auth','role:admin'])->group(function() {
 // subCategory All Route 
 Route::controller(SubCategoryController::class)->group(function(){
     Route::get('/all/subcategory' , 'AllSubCategory')->name('all.subcategory');
-    Route::get('/add/category' , 'AddCategory')->name('add.category');
-    Route::post('/store/category' , 'StoreCategory')->name('store.category');
+    Route::get('/add/subcategory' , 'Addsubcategory')->name('add.subcategory');
+    Route::post('/store/subcategory' , 'Storesubcategory')->name('store.subcategory');
     Route::get('/edit/category/{id}' , 'EditCategory')->name('edit.category');
     Route::post('/update/category' , 'UpdateCategory')->name('update.category');
     Route::get('/delete/category/{id}' , 'DeleteCategory')->name('delete.category');
