@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
+use App\Http\Controllers\Backend\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -118,7 +119,15 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('/inactive/vendor/details/{id}' , 'InactiveVendorDetails')->name('inactive.vendor.details');
     Route::post('/active/vendor/approve' , 'ActiveVendorApprove')->name('active.vendor.approve');
     Route::get('/active/vendor/details/{id}' , 'ActiveVendorDetails')->name('active.vendor.details');
-      Route::post('/inactive/vendor/approve' , 'InActiveVendorApprove')->name('inactive.vendor.approve');
+    Route::post('/inactive/vendor/approve' , 'InActiveVendorApprove')->name('inactive.vendor.approve');
+
+});
+
+
+// Product All Route 
+Route::controller(ProductController::class)->group(function(){
+    Route::get('/all/product' , 'AllProduct')->name('all.product');
+    Route::get('/add/subcategory' , 'AddSubCategory')->name('add.subcategory');
 
 
 });
