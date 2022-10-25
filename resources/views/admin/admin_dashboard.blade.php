@@ -27,7 +27,9 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 	<!-- DataTable -->
 	<link href="{{ asset('adminbackend/assets/plugins/datatable/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet" />
-	<!-- DataTable-->
+	<!-- tagsinput-->
+	<link href="{{ asset('adminbackend/assets/plugins/input-tags/css/tagsinput.css') }}" rel="stylesheet" />
+	
 	<title>Matjel Admin </title>
 </head>
 
@@ -124,6 +126,18 @@
 		}
 		@endif 
 	   </script>
+
+<script src="{{ asset('adminbackend/assets/plugins/input-tags/js/tagsinput.js') }}"></script>
+
+<script src='https://cdn.tiny.cloud/1/vdqx2klew412up5bcbpwivg1th6nrh3murc6maz8bukgos4v/tinymce/5/tinymce.min.js' referrerpolicy="origin">
+</script>
+
+<script>
+   tinymce.init({
+	 selector: '#mytextarea'
+   });
+</script>
+
 
 
 
