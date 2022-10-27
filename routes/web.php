@@ -110,6 +110,8 @@ Route::controller(SubCategoryController::class)->group(function(){
     Route::post('/update/subcategory' , 'Updatesubcategory')->name('update.subcategory');
     Route::get('/delete/subcategory/{id}' , 'Deletesubcategory')->name('delete.subcategory');
 
+    Route::get('/subcategory/ajax/{category_id}' , 'GetSubCategory');
+
 });
 
 // Vendor Active and Inactive All Route 
