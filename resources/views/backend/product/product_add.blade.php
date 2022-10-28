@@ -173,7 +173,7 @@
 
 				  <div class="col-12">
 					  <div class="d-grid">
-                         <button type="button" class="btn btn-primary">Save Product</button>
+                        <input type="submit" class="btn btn-primary px-4" value="Save Changes" />
 					  </div>
 				  </div>
 			  </div> 
