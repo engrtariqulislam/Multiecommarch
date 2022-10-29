@@ -166,6 +166,12 @@
 		</div>
 	</div>
 
+	<div class="col-md-6">	
+		<div class="form-check">
+				<input class="form-check-input" name="special_deals" type="checkbox" value="1" id="flexCheckDefault">
+				<label class="form-check-label" for="flexCheckDefault">Special Deals</label>
+			</div>
+		</div>
 
 
 
