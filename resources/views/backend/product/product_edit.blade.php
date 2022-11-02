@@ -24,7 +24,7 @@
 	  <h5 class="card-title">Edit Product</h5>
 	  <hr/>
 
-<form id="myForm" method="post" action="{{ route('store.product') }}" enctype="multipart/form-data" >
+<form id="myForm" method="post" action="{{ route('update.product') }}" enctype="multipart/form-data" >
 			@csrf
 
        <div class="form-body mt-4">
@@ -187,7 +187,7 @@
 
 				  <div class="col-12">
 					  <div class="d-grid">
-					  	<input type="submit" class="btn btn-primary px-4" value="Save Changes" />
+                        <input type="submit" class="btn btn-primary px-4" value="Save Changes" />
 
 					  </div>
 				  </div>
