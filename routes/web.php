@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Backend\VendorProductController;
 use App\Http\Controllers\Backend\SliderController;
+use App\Http\Controllers\Backend\BannerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -189,5 +190,16 @@ Route::controller(ProductController::class)->group(function(){
 
 });
 
+
+    // Banner All Route 
+    Route::controller(BannerController::class)->group(function(){
+    Route::get('/all/banner' , 'AllBanner')->name('all.banner');
+    Route::get('/add/slider' , 'AddSlider')->name('add.slider');
+    Route::post('/store/slider' , 'StoreSlider')->name('store.slider');
+    Route::get('/edit/slider/{id}' , 'EditSlider')->name('edit.slider');
+    Route::post('/update/slider' , 'UpdateSlider')->name('update.slider');
+    Route::get('/delete/slider/{id}' , 'DeleteSlider')->name('delete.slider');
+
+});
    
    }); // admin End Middleware 
