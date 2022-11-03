@@ -178,14 +178,14 @@ Route::controller(ProductController::class)->group(function(){
 });
 
 
-    // Category All Route 
+    // slider All Route 
     Route::controller(SliderController::class)->group(function(){
     Route::get('/all/slider' , 'AllSlider')->name('all.slider');
-    Route::get('/add/category' , 'Addcategory')->name('add.category');
-    Route::post('/store/category' , 'Storecategory')->name('store.category');
-    Route::get('/edit/category/{id}' , 'Editcategory')->name('edit.category');
-    Route::post('/update/category' , 'Updatecategory')->name('update.category');
-    Route::get('/delete/category/{id}' , 'Deletecategory')->name('delete.category');
+    Route::get('/add/slider' , 'Addslider')->name('add.slider');
+    Route::post('/store/slider' , 'Storeslider')->name('store.slider');
+    Route::get('/edit/slider/{id}' , 'Editslider')->name('edit.slider');
+    Route::post('/update/slider' , 'Updateslider')->name('update.slider');
+    Route::get('/delete/slider/{id}' , 'Deleteslider')->name('delete.slider');
 
 });
 
