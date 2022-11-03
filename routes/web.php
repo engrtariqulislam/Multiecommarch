@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Backend\VendorProductController;
+use App\Http\Controllers\Backend\SliderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -177,5 +178,16 @@ Route::controller(ProductController::class)->group(function(){
 });
 
 
+    // Category All Route 
+    Route::controller(SliderController::class)->group(function(){
+    Route::get('/all/slider' , 'AllSlider')->name('all.slider');
+    Route::get('/add/category' , 'Addcategory')->name('add.category');
+    Route::post('/store/category' , 'Storecategory')->name('store.category');
+    Route::get('/edit/category/{id}' , 'Editcategory')->name('edit.category');
+    Route::post('/update/category' , 'Updatecategory')->name('update.category');
+    Route::get('/delete/category/{id}' , 'Deletecategory')->name('delete.category');
+
+});
+
    
-   }); // End Middleware 
+   }); // admin End Middleware 
