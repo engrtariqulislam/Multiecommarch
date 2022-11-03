@@ -196,9 +196,9 @@ Route::controller(ProductController::class)->group(function(){
     Route::get('/all/banner' , 'AllBanner')->name('all.banner');
     Route::get('/add/banner' , 'Addbanner')->name('add.banner');
     Route::post('/store/banner' , 'Storebanner')->name('store.banner');
-    Route::get('/edit/slider/{id}' , 'EditSlider')->name('edit.slider');
-    Route::post('/update/slider' , 'UpdateSlider')->name('update.slider');
-    Route::get('/delete/slider/{id}' , 'DeleteSlider')->name('delete.slider');
+    Route::get('/edit/banner/{id}' , 'Editbanner')->name('edit.banner');
+    Route::post('/update/banner' , 'Updatebanner')->name('update.banner');
+    Route::get('/delete/banner/{id}' , 'Deletebanner')->name('delete.banner');
 
 });
    
