@@ -12,6 +12,8 @@ use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Backend\VendorProductController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\BannerController;
+use App\Http\Controllers\Frontend\IndexController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -203,3 +205,7 @@ Route::controller(ProductController::class)->group(function(){
 });
    
    }); // admin End Middleware 
+
+
+   Route::get('/product/details/{id}/{slug}', [IndexController::class, 'ProductDetails']);
+
