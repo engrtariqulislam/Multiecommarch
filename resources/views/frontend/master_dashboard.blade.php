@@ -11,7 +11,7 @@
     <meta property="og:type" content="" />
     <meta property="og:url" content="" />
     <meta property="og:image" content="" />
-    <meta name="csrf-token" content="{{ csrf-token() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->  
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/assets/imgs/theme/favicon.svg') }}" />
     <!-- Template CSS -->
@@ -87,6 +87,19 @@
             }
         })
         /// Start product view with Modal 
+
+        function productView(id){
+        // alert(id)
+        $.ajax({
+            type: 'GET',
+            url: '/product/view/modal/'+id,
+            dataType: 'json',
+            success:function(data){
+                console.log(data)
+            }
+        })
+    }
+
      </script>
     
 </body>
