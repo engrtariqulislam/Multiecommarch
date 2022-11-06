@@ -65,52 +65,20 @@ $featured = App\Models\Product::where('featured',1)->orderBy('id','DESC')->limit
                 </div>
                 <h2><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug) }}">{{ $product->product_name }}</a></h2>
 
-
-                <div class="product-rate d-inline-block">
-                   
-                </div>
-
-                @if($product->discount_price == NULL)
-                 <div class="product-price mt-10">
-                    <span>${{ $product->selling_price }} </span>
-                   
-                </div>
-                @else
-                   <div class="product-price mt-10">
-                    <span>${{ $product->discount_price }} </span>
-                    <span class="old-price">${{ $product->selling_price }}</span>
-                </div>
-                @endif
-                
-                <div class="sold mt-15 mb-15">
-                    <div class="progress mb-5">
-
-
-   <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuemin="0" aria-valuemax="100"></div>
-
-
-                    </div>
-                     
-                </div>
-                <a href="shop-cart.html" class="btn w-100 hover-up"><i class="fi-rs-shopping-cart mr-5"></i>Add To Cart</a>
-            </div>
-        </div>
-        <!--End product Wrap-->
-        @endforeach
-
-
-
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End tab-pane-->
-
-                           
+                       
+                            <!--End product Wrap-->
+                            @endforeach
+              
                         </div>
-                        <!--End tab-content-->
                     </div>
-                    <!--End Col-lg-9-->
                 </div>
+                <!--End tab-pane-->
+
+               
             </div>
-        </section>
+            <!--End tab-content-->
+        </div>
+        <!--End Col-lg-9-->
+    </div>
+</div>
+</section>
