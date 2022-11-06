@@ -210,4 +210,4 @@ Route::controller(ProductController::class)->group(function(){
 
 
    Route::get('/product/details/{id}/{slug}', [IndexController::class, 'ProductDetails']);
-
+   Route::get('/vendor/details/{id}', [IndexController::class, 'VendorDetails'])->name('vendor.details');
