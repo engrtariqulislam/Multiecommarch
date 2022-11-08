@@ -219,3 +219,5 @@ Route::controller(ProductController::class)->group(function(){
    // Product View Modal With Ajax
 
 Route::get('/product/view/modal/{id}', [IndexController::class, 'ProductViewAjax']);
+/// Add to cart store data
+Route::post('/cart/data/store/{id}', [CartController::class, 'AddToCart']);
