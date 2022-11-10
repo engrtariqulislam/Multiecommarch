@@ -12,6 +12,9 @@
     <meta property="og:url" content="" />
     <meta property="og:image" content="" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- Favicon -->  
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/assets/imgs/theme/favicon.svg') }}" />
     <!-- Template CSS -->
@@ -165,8 +168,33 @@
         },
         url: "/cart/data/store/"+id,
         success:function(data){
-            console.log(data)
+            
             $('#closeModal').click();
+            // console.log(data)
+            // Start Message 
+            const Toast = Swal.mixin({
+                  toast: true,
+                  position: 'top-end',
+                  icon: 'success', 
+                  showConfirmButton: false,
+                  timer: 3000 
+            })
+            if ($.isEmptyObject(data.error)) {
+                    
+                    Toast.fire({
+                    type: 'success',
+                    title: data.success, 
+                    })
+            }else{
+               
+           Toast.fire({
+                    type: 'error',
+                    title: data.error, 
+                    })
+                }
+
+
+
         }
      })
     }
