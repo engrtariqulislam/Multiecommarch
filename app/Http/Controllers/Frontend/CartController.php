@@ -120,5 +120,10 @@ public function RemoveMiniCart($rowId){
 
 }// End Method
 
+public function MyCart(){
+
+    return view('frontend.mycart.view_mycart');
+
+}// End Method
 
 }
