@@ -215,11 +215,11 @@ Route::controller(ProductController::class)->group(function(){
 // Coupone All Route 
 Route::controller(CouponController::class)->group(function(){
     Route::get('/all/coupon' , 'AllCoupon')->name('all.coupon');
-    Route::get('/add/banner' , 'AddBanner')->name('add.banner');
-    Route::post('/store/banner' , 'StoreBanner')->name('store.banner');
-    Route::get('/edit/banner/{id}' , 'EditBanner')->name('edit.banner');
-    Route::post('/update/banner' , 'UpdateBanner')->name('update.banner');
-    Route::get('/delete/banner/{id}' , 'DeleteBanner')->name('delete.banner');
+    Route::get('/add/coupon' , 'Addcoupon')->name('add.coupon');
+    Route::post('/store/coupon' , 'Storecoupon')->name('store.coupon');
+    Route::get('/edit/coupon/{id}' , 'Editcoupon')->name('edit.coupon');
+    Route::post('/update/coupon' , 'Updatecoupon')->name('update.coupon');
+    Route::get('/delete/coupon/{id}' , 'Deletecoupon')->name('delete.coupon');
 
 }); 
    
