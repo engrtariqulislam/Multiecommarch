@@ -336,6 +336,42 @@ function addToCartDetails(){
         })
       }
        /// Mini Cart Remove End 
+/// Mini Cart Remove Start 
+function miniCartRemove(rowId){
+     $.ajax({
+        type: 'GET',
+        url: '/minicart/product/remove/'+rowId,
+        dataType:'json',
+        success:function(data){
+        miniCart();
+             // Start Message 
+            const Toast = Swal.mixin({
+                  toast: true,
+                  position: 'top-end',
+                  icon: 'success', 
+                  showConfirmButton: false,
+                  timer: 3000 
+            })
+            if ($.isEmptyObject(data.error)) {
+                    
+                    Toast.fire({
+                    type: 'success',
+                    title: data.success, 
+                    })
+            }else{
+               
+           Toast.fire({
+                    type: 'error',
+                    title: data.error, 
+                    })
+                }
+              // End Message  
+        }
+     })
+   }
+    /// Mini Cart Remove End 
+
+
    </script>
 
 </body>
