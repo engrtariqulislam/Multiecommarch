@@ -216,58 +216,52 @@
     } 
     /// End Add To Cart Product 
 
-// Start Details Page Add To Cart Product 
-function addToCartDetails(){
-     var product_name = $('#dpname').text();  
-     var id = $('#dproduct_id').val();
-     var vendor = $('#vproduct_id').val();
-     var color = $('#dcolor option:selected').text();
-     var size = $('#dsize option:selected').text();
-     var quantity = $('#dqty').val(); 
-     $.ajax({
-        type: "POST",
-        dataType : 'json',
-        data:{
-            color:color, size:size, quantity:quantity,product_name:product_name,vendor:vendor
-        },
-        url: "/dcart/data/store/"+id,
-        success:function(data){
-            miniCart();
-          
-            // console.log(data)
-            // Start Message 
-            const Toast = Swal.mixin({
-                  toast: true,
-                  position: 'top-end',
-                  icon: 'success', 
-                  showConfirmButton: false,
-                  timer: 3000 
-            })
-            if ($.isEmptyObject(data.error)) {
-                    
-                    Toast.fire({
-                    type: 'success',
-                    title: data.success, 
-                    })
-            }else{
-               
-           Toast.fire({
-                    type: 'error',
-                    title: data.error, 
-                    })
-                }
-              // End Message  
-        } 
-     }) 
-    } 
-     /// Eend Details Page Add To Cart Product 
+    public function AddToCartDetails(Request $request, $id){
 
+$product = Product::findOrFail($id);
 
-     </script>
+if ($product->discount_price == NULL) {
 
+    Cart::add([
 
+        'id' => $id,
+        'name' => $request->product_name,
+        'qty' => $request->quantity,
+        'price' => $product->selling_price,
+        'weight' => 1,
+        'options' => [
+            'image' => $product->product_thambnail,
+            'color' => $request->color,
+            'size' => $request->size,
+        ],
+    ]);
 
-<script type="text/javascript">
+return response()->json(['success' => 'Successfully Added on Your Cart' ]);
+
+}else{
+
+    Cart::add([
+
+        'id' => $id,
+        'name' => $request->product_name,
+        'qty' => $request->quantity,
+        'price' => $product->discount_price,
+        'weight' => 1,
+        'options' => [
+            'image' => $product->product_thambnail,
+            'color' => $request->color,
+            'size' => $request->size,
+        ],
+    ]);
+
+   return response()->json(['success' => 'Successfully Added on Your Cart' ]);
+
+}
+
+}// End Method
+
+/// End Details Page Add To Cart Product 
+
     
     function miniCart(){
        $.ajax({
@@ -335,42 +329,7 @@ function addToCartDetails(){
            }
         })
       }
-       /// Mini Cart Remove End 
-/// Mini Cart Remove Start 
-function miniCartRemove(rowId){
-     $.ajax({
-        type: 'GET',
-        url: '/minicart/product/remove/'+rowId,
-        dataType:'json',
-        success:function(data){
-        miniCart();
-             // Start Message 
-            const Toast = Swal.mixin({
-                  toast: true,
-                  position: 'top-end',
-                  icon: 'success', 
-                  showConfirmButton: false,
-                  timer: 3000 
-            })
-            if ($.isEmptyObject(data.error)) {
-                    
-                    Toast.fire({
-                    type: 'success',
-                    title: data.success, 
-                    })
-            }else{
-               
-           Toast.fire({
-                    type: 'error',
-                    title: data.error, 
-                    })
-                }
-              // End Message  
-        }
-     })
-   }
-    /// Mini Cart Remove End 
-
+       /// Mini Cart Remove End
 
    </script>
 
