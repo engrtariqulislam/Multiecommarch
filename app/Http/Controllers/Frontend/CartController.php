@@ -146,6 +146,16 @@ public function CartRemove($rowId){
 
 }// End Method
 
+public function CartIncrement($rowId){
+
+    $row = Cart::get($rowId);
+    Cart::update($rowId, $row->qty +1);
+
+    return response()->json('Increment');
+
+}// End Method
+
+
 public function CartDecrement($rowId){
 
     $row = Cart::get($rowId);

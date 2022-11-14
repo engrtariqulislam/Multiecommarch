@@ -647,7 +647,7 @@ function compareRemove(id){
            <td class="text-center detail-info" data-title="Stock">
                <div class="detail-extralink mr-15">
                    <div class="detail-qty border radius">
-                       <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
+                    <a  type="submit" class="qty-up" id="${value.rowId}" onclick="cartIncrement(this.id)"><i class="fi-rs-angle-small-up"></i></a>
                       
      <input type="text" name="quantity" class="qty-val" value="${value.qty}" min="1">
      <a type="submit" class="qty-down" id="${value.rowId}" onclick="cartDecrement(this.id)"><i class="fi-rs-angle-small-down"></i></a>
@@ -707,7 +707,17 @@ function cartRemove(id){
 // Cart Remove End 
 // Cart INCREMENT 
 
-
+function cartIncrement(rowId){
+    $.ajax({
+        type: 'GET',
+        url: "/cart-increment/"+rowId,
+        dataType: 'json',
+        success:function(data){
+            cart();
+            miniCart();
+        }
+    });
+ }
 
 // Cart INCREMENT End 
 // Cart Decrement Start
