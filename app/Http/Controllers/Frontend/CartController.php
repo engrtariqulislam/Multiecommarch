@@ -165,6 +165,8 @@ public function CartDecrement($rowId){
 
 }// End Method
 
+public function CouponApply(){
 
+}// End Method
 
 }
