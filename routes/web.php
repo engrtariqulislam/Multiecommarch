@@ -249,8 +249,8 @@ Route::controller(ShippingAreaController::class)->group(function(){
 Route::controller(ShippingAreaController::class)->group(function(){
     Route::get('/all/state' , 'AllState')->name('all.state');
     Route::get('/add/state' , 'AddState')->name('add.state');
-    Route::post('/store/district' , 'StoreDistrict')->name('store.district');
-    Route::get('/edit/district/{id}' , 'EditDistrict')->name('edit.district');
+    Route::post('/store/state' , 'Storestate')->name('store.state');
+    Route::get('/edit/state/{id}' , 'Editstate')->name('edit.state');
     Route::post('/update/district' , 'UpdateDistrict')->name('update.district');
     Route::get('/delete/district/{id}' , 'DeleteDistrict')->name('delete.district');
 
